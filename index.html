@@ -1,0 +1,1751 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Néerlandais - 4e année (général) - Santé & Gezondheid</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;600;700&family=Inter:wght@400;500;600;700&display=swap');
+
+        :root {
+            --bg-neutral: #F8F9FA;
+            --text-dark: #1E293B;
+            --blue-wbe: #001D74;
+            --red-wbe: #C4332B;
+            --yellow-wbe: #ECA531;
+            --white: #FFFFFF;
+            --border-color: #CBD5E1;
+            --card-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            --font-main: 'Inter', system-ui, -apple-system, sans-serif;
+            --font-size-base: 1rem;
+        }
+
+        .dyslexic-font {
+            --font-main: 'Lexend', sans-serif !important;
+            letter-spacing: 0.05em;
+            word-spacing: 0.1em;
+            line-height: 1.7 !important;
+        }
+
+        .high-contrast {
+            --bg-neutral: #000000;
+            --text-dark: #FFFFFF;
+            --blue-wbe: #002299;
+            --red-wbe: #FF3333;
+            --yellow-wbe: #FFCC00;
+            --white: #121212;
+            --border-color: #FFFFFF;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: var(--font-main);
+        }
+
+        body {
+            background-color: var(--bg-neutral);
+            color: var(--text-dark);
+            font-size: var(--font-size-base);
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            line-height: 1.5;
+        }
+
+        header {
+            background-color: var(--blue-wbe);
+            color: var(--white);
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .header-left {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+        }
+
+        .header-logo {
+            height: 55px;
+            width: auto;
+            object-fit: contain;
+            background: transparent;
+        }
+
+        .header-title {
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: var(--white);
+        }
+
+        .header-controls {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .score-badge {
+            background-color: var(--white);
+            color: var(--blue-wbe);
+            border: 2px solid var(--yellow-wbe);
+            padding: 0.5rem 1.2rem;
+            border-radius: 50px;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 1.1rem;
+            box-shadow: var(--card-shadow);
+        }
+
+        .accessibility-toolbar {
+            background-color: #E2E8F0;
+            padding: 0.5rem 2rem;
+            display: flex;
+            gap: 1rem;
+            align-items: center;
+            flex-wrap: wrap;
+            font-size: 0.9rem;
+        }
+
+        .a11y-btn {
+            background: var(--white);
+            border: 1px solid var(--border-color);
+            padding: 0.3rem 0.8rem;
+            border-radius: 4px;
+            cursor: pointer;
+            font-weight: 600;
+            color: var(--text-dark);
+        }
+
+        .a11y-btn:hover, .a11y-btn:focus {
+            background: var(--blue-wbe);
+            color: var(--white);
+            outline: 2px solid var(--yellow-wbe);
+        }
+
+        nav {
+            background-color: #001552;
+            padding: 0 2rem;
+            display: flex;
+            gap: 0.5rem;
+            overflow-x: auto;
+        }
+
+        .nav-btn {
+            background: transparent;
+            color: #E2E8F0;
+            border: none;
+            padding: 1rem 1.5rem;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+            border-bottom: 4px solid transparent;
+            transition: all 0.2s ease;
+            white-space: nowrap;
+        }
+
+        .nav-btn:hover, .nav-btn:focus {
+            background-color: rgba(255, 255, 255, 0.1);
+            color: var(--white);
+            outline: none;
+        }
+
+        .nav-btn.active {
+            color: var(--white);
+            border-bottom-color: var(--yellow-wbe);
+            background-color: rgba(255, 255, 255, 0.15);
+        }
+
+        main {
+            flex: 1;
+            max-width: 1200px;
+            width: 100%;
+            margin: 2rem auto;
+            padding: 0 1.5rem;
+        }
+
+        .tab-content {
+            display: none;
+            animation: fadeIn 0.3s ease;
+        }
+
+        .tab-content.active {
+            display: block;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(5px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .section-header {
+            margin-bottom: 2rem;
+            padding-bottom: 1rem;
+            border-bottom: 3px solid var(--yellow-wbe);
+        }
+
+        .section-title {
+            color: var(--blue-wbe);
+            font-size: 1.8rem;
+            margin-bottom: 0.5rem;
+            font-weight: 700;
+        }
+
+        .section-subtitle {
+            color: var(--text-dark);
+            font-size: 1.1rem;
+            opacity: 0.9;
+        }
+
+        .intro-card {
+            background: var(--white);
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: var(--card-shadow);
+            border-left: 6px solid var(--blue-wbe);
+            margin-bottom: 1.5rem;
+        }
+
+        .competence-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 1.5rem;
+            margin-top: 1.5rem;
+        }
+
+        .comp-card {
+            background: var(--white);
+            border: 2px solid var(--border-color);
+            padding: 1.2rem;
+            border-radius: 8px;
+            text-align: center;
+        }
+
+        .comp-card span.symbol {
+            font-size: 2rem;
+            display: block;
+            margin-bottom: 0.5rem;
+            color: var(--blue-wbe);
+        }
+
+        .table-container {
+            background: var(--white);
+            border-radius: 8px;
+            box-shadow: var(--card-shadow);
+            overflow: hidden;
+            margin-bottom: 2.5rem;
+        }
+
+        .vocab-table-title {
+            background: var(--blue-wbe);
+            color: var(--white);
+            padding: 1rem 1.5rem;
+            font-size: 1.3rem;
+            font-weight: 700;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            text-align: left;
+        }
+
+        th, td {
+            padding: 0.8rem 1.2rem;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        th {
+            background-color: #F1F5F9;
+            color: var(--text-dark);
+            font-weight: 700;
+        }
+
+        tr:nth-child(even) {
+            background-color: #F8FAFC;
+        }
+
+        tr:hover {
+            background-color: #EFF6FF;
+        }
+
+        .audio-btn {
+            background: var(--blue-wbe);
+            color: var(--white);
+            border: none;
+            padding: 0.4rem 0.8rem;
+            border-radius: 4px;
+            cursor: pointer;
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            font-size: 0.9rem;
+        }
+
+        .audio-btn:hover, .audio-btn:focus {
+            background: #001248;
+            outline: 2px solid var(--yellow-wbe);
+        }
+
+        .flashcards-section {
+            background: var(--white);
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: var(--card-shadow);
+            margin-top: 3rem;
+            text-align: center;
+        }
+
+        .flashcard-controls {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+            flex-wrap: wrap;
+        }
+
+        .btn-action {
+            background-color: var(--red-wbe);
+            color: var(--white);
+            border: none;
+            padding: 0.7rem 1.5rem;
+            border-radius: 6px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+
+        .btn-action:hover, .btn-action:focus {
+            background-color: #A0261F;
+            outline: 2px solid var(--yellow-wbe);
+        }
+
+        .btn-secondary {
+            background-color: var(--blue-wbe);
+            color: var(--white);
+            border: none;
+            padding: 0.7rem 1.5rem;
+            border-radius: 6px;
+            font-weight: 700;
+            cursor: pointer;
+        }
+
+        .btn-secondary:hover, .btn-secondary:focus {
+            background-color: #001248;
+            outline: 2px solid var(--yellow-wbe);
+        }
+
+        .flashcard-container {
+            perspective: 1000px;
+            width: 100%;
+            max-width: 500px;
+            height: 250px;
+            margin: 0 auto 1.5rem auto;
+            cursor: pointer;
+        }
+
+        .flashcard {
+            width: 100%;
+            height: 100%;
+            position: relative;
+            transform-style: preserve-3d;
+            transition: transform 0.6s;
+            box-shadow: var(--card-shadow);
+            border-radius: 12px;
+            border: 2px solid var(--blue-wbe);
+        }
+
+        .flashcard.flipped {
+            transform: rotateY(180deg);
+        }
+
+        .flashcard-front, .flashcard-back {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            backface-visibility: hidden;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 1.5rem;
+            border-radius: 12px;
+            background: var(--white);
+        }
+
+        .flashcard-back {
+            transform: rotateY(180deg);
+            background: #F0F4FF;
+            color: var(--blue-wbe);
+        }
+
+        .flashcard-text {
+            font-size: 1.6rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+
+        .flashcard-nav {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 1.5rem;
+        }
+
+        .games-list {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+        }
+
+        .game-card {
+            background: var(--white);
+            border-radius: 12px;
+            padding: 1.8rem;
+            box-shadow: var(--card-shadow);
+            border-top: 5px solid var(--blue-wbe);
+        }
+
+        .game-title {
+            color: var(--blue-wbe);
+            font-size: 1.3rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+
+        .game-consigne {
+            font-style: italic;
+            margin-bottom: 1.2rem;
+            color: #475569;
+        }
+
+        .exercise-item {
+            margin-bottom: 1rem;
+            padding: 0.8rem;
+            background: #F8FAFC;
+            border-radius: 6px;
+        }
+
+        .input-inline {
+            padding: 0.4rem 0.8rem;
+            border: 2px solid var(--border-color);
+            border-radius: 4px;
+            font-size: 1rem;
+            margin: 0 0.3rem;
+        }
+
+        .input-inline:focus {
+            border-color: var(--blue-wbe);
+            outline: 2px solid var(--yellow-wbe);
+        }
+
+        select.input-inline {
+            background: var(--white);
+            cursor: pointer;
+        }
+
+        .feedback-message {
+            margin-top: 1rem;
+            padding: 0.8rem;
+            border-radius: 6px;
+            font-weight: 700;
+            display: none;
+        }
+
+        .feedback-success {
+            background-color: #DCFCE7;
+            color: #166534;
+            border: 1px solid #86EFAC;
+        }
+
+        .feedback-error {
+            background-color: #FEE2E2;
+            color: #991B1B;
+            border: 1px solid #FCA5A5;
+        }
+
+        .matching-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+        }
+
+        footer {
+            background-color: var(--blue-wbe);
+            color: var(--white);
+            padding: 1.2rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin-top: auto;
+            font-size: 0.9rem;
+        }
+
+        @media (max-width: 768px) {
+            header {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            .header-controls {
+                width: 100%;
+                justify-content: space-between;
+            }
+            .matching-grid {
+                grid-template-columns: 1fr;
+            }
+            footer {
+                flex-direction: column;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="header-left">
+            <img src="https://www.wbe.be/fileadmin/sites/wbe/uploads/images/Poles_territoriaux/logo-poles-terr-GRAND.png" alt="Logo Pôle Territorial WBE" class="header-logo">
+            <h1 class="header-title">Néerlandais - 4e année (général)</h1>
+        </div>
+        <div class="header-controls">
+            <div class="score-badge">
+                <span aria-hidden="true">&#127940;</span>
+                <span id="score-display">Score : 0 pts</span>
+            </div>
+        </div>
+    </header>
+
+    <div class="accessibility-toolbar" aria-label="Paramètres d'accessibilité">
+        <span>Options d'accessibilité :</span>
+        <button class="a11y-btn" onclick="toggleDyslexicFont()">Police Dyslexie</button>
+        <button class="a11y-btn" onclick="toggleHighContrast()">Haut Contraste</button>
+        <button class="a11y-btn" onclick="changeFontSize(1)">A+</button>
+        <button class="a11y-btn" onclick="changeFontSize(-1)">A-</button>
+    </div>
+
+    <nav aria-label="Navigation principale">
+        <button class="nav-btn active" onclick="switchTab('tab1', this)">
+            <span aria-hidden="true">&#128214;</span> 1. Introduction
+        </button>
+        <button class="nav-btn" onclick="switchTab('tab2', this)">
+            <span aria-hidden="true">&#128203;</span> 2. Vocabulaire
+        </button>
+        <button class="nav-btn" onclick="switchTab('tab3', this)">
+            <span aria-hidden="true">&#127918;</span> 3. Exercices & Jeux
+        </button>
+        <button class="nav-btn" onclick="switchTab('tab4', this)">
+            <span aria-hidden="true">&#127894;</span> 4. Mon Profil
+        </button>
+    </nav>
+
+    <main>
+        <!-- ONGLET 1 -->
+        <section id="tab1" class="tab-content active">
+            <div class="section-header">
+                <h2 class="section-title">1. Introduction</h2>
+                <p class="section-subtitle">Bienvenue dans ton application d'apprentissage du néerlandais !</p>
+            </div>
+            
+            <div class="intro-card">
+                <h3>Thématique : La santé (Gezondheid)</h3>
+                <p style="margin-top: 1rem;">
+                    Dans ce module, tu vas apprendre et t'exercer sur le vocabulaire essentiel de la <strong>santé en néerlandais</strong>. 
+                </p>
+                <p style="margin-top: 1rem;">
+                    <strong>Pourquoi s'exercer régulièrement ?</strong><br>
+                    La mémorisation active du vocabulaire n'est pas une fin en soi : c'est le fondement indispensable qui va te permettre de développer et réussir dans toutes les <strong>4 compétences linguistiques</strong> :
+                </p>
+
+                <div class="competence-grid">
+                    <div class="comp-card">
+                        <span class="symbol">&#127911;</span>
+                        <strong>Compréhension de l'oral</strong>
+                        <p style="font-size: 0.85rem; margin-top: 0.4rem;">Comprendre des témoignages, conseils médicaux et dialogues.</p>
+                    </div>
+                    <div class="comp-card">
+                        <span class="symbol">&#128214;</span>
+                        <strong>Compréhension de l'écrit</strong>
+                        <p style="font-size: 0.85rem; margin-top: 0.4rem;">Lire des articles de prévention et des résultats de sondages.</p>
+                    </div>
+                    <div class="comp-card">
+                        <span class="symbol">&#12541;</span>
+                        <strong>Production orale</strong>
+                        <p style="font-size: 0.85rem; margin-top: 0.4rem;">Exprimer ton avis sur les habitudes de vie et donner des conseils.</p>
+                    </div>
+                    <div class="comp-card">
+                        <span class="symbol">&#9997;</span>
+                        <strong>Production écrite</strong>
+                        <p style="font-size: 0.85rem; margin-top: 0.4rem;">Rédiger des textes structurés avec des connecteurs logiques.</p>
+                    </div>
+                </div>
+
+                <div style="margin-top: 2rem; background: #FEF3C7; padding: 1rem; border-radius: 8px; border-left: 4px solid var(--yellow-wbe);">
+                    <strong>Principe de gamification :</strong> Chaque exercice complété te rapporte des points ! Réponds correctement aux jeux de l'onglet 3 pour débloquer des badges.
+                </div>
+            </div>
+        </section>
+
+        <!-- ONGLET 2 -->
+        <section id="tab2" class="tab-content">
+            <div class="section-header">
+                <h2 class="section-title">2. Vocabulaire</h2>
+                <p class="section-subtitle">Voici le vocabulaire relatif à la santé que tu dois maîtriser.</p>
+            </div>
+
+            <!-- TABLEAU A -->
+            <div class="table-container">
+                <div class="vocab-table-title">a. Substantieven</div>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Néerlandais</th>
+                            <th>Écouter (0.6x)</th>
+                            <th>Français</th>
+                        </tr>
+                    </thead>
+                    <tbody id="table-substantieven"></tbody>
+                </table>
+            </div>
+
+            <!-- TABLEAU B -->
+            <div class="table-container">
+                <div class="vocab-table-title">b. Adjectieven</div>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Néerlandais</th>
+                            <th>Écouter (0.6x)</th>
+                            <th>Français</th>
+                        </tr>
+                    </thead>
+                    <tbody id="table-adjectieven"></tbody>
+                </table>
+            </div>
+
+            <!-- TABLEAU C -->
+            <div class="table-container">
+                <div class="vocab-table-title">c. Werkwoorden</div>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Néerlandais</th>
+                            <th>Écouter (0.6x)</th>
+                            <th>Français</th>
+                        </tr>
+                    </thead>
+                    <tbody id="table-werkwoorden"></tbody>
+                </table>
+            </div>
+
+            <!-- TABLEAU D -->
+            <div class="table-container">
+                <div class="vocab-table-title">d. Signaalwoorden</div>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Néerlandais</th>
+                            <th>Écouter (0.6x)</th>
+                            <th>Français</th>
+                        </tr>
+                    </thead>
+                    <tbody id="table-signaalwoorden"></tbody>
+                </table>
+            </div>
+
+            <!-- TABLEAU E -->
+            <div class="table-container">
+                <div class="vocab-table-title">e. Voorzetsels</div>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Néerlandais</th>
+                            <th>Écouter (0.6x)</th>
+                            <th>Français</th>
+                        </tr>
+                    </thead>
+                    <tbody id="table-voorzetsels"></tbody>
+                </table>
+            </div>
+
+            <!-- FLASHCARDS SECTION -->
+            <div class="flashcards-section">
+                <h3>Flashcards de révision (Tout le vocabulaire)</h3>
+                <p style="margin-bottom: 1rem;">Clique sur la carte pour voir la traduction.</p>
+
+                <div class="flashcard-controls">
+                    <button class="btn-secondary" onclick="toggleLanguageDirection()">Sens : <span id="lang-dir-label">Néerlandais &#127757; Français</span></button>
+                    <button class="btn-secondary" onclick="shuffleFlashcards()">Mélanger &#127922;</button>
+                </div>
+
+                <div class="flashcard-container" onclick="flipCard()">
+                    <div class="flashcard" id="flashcard-el">
+                        <div class="flashcard-front">
+                            <div class="flashcard-text" id="fc-front-text">--</div>
+                            <button class="audio-btn" onclick="event.stopPropagation(); speakWord(document.getElementById('fc-audio-target').innerText)">&#128266; Écouter</button>
+                            <span id="fc-audio-target" style="display:none;"></span>
+                        </div>
+                        <div class="flashcard-back">
+                            <div class="flashcard-text" id="fc-back-text">--</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="flashcard-nav">
+                    <button class="btn-action" onclick="prevCard()">&#11013; Précédent</button>
+                    <span id="fc-counter" style="font-weight: 700;">1 / --</span>
+                    <button class="btn-action" onclick="nextCard()">Suivant &#10145;</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- ONGLET 3 -->
+        <section id="tab3" class="tab-content">
+            <div class="section-header">
+                <h2 class="section-title">3. Exercices & Jeux</h2>
+                <p class="section-subtitle">Teste tes connaissances et gagne des points ! (Exercices mélangés aléatoirement)</p>
+            </div>
+
+            <div class="games-list">
+                <!-- JEU 1 -->
+                <div class="game-card" id="game1">
+                    <div class="game-title">EXERCICE 1 – Koppel de woorden</div>
+                    <div class="game-consigne">Consigne : Relie chaque mot néerlandais à sa traduction française.</div>
+                    <div class="matching-grid" id="g1-container"></div>
+                    <button class="btn-action" style="margin-top: 1rem;" onclick="checkGame1()">Vérifier les réponses</button>
+                    <div class="feedback-message" id="g1-feedback"></div>
+                </div>
+
+                <!-- JEU 2 -->
+                <div class="game-card" id="game2">
+                    <div class="game-title">EXERCICE 2 – Quel mot manque ?</div>
+                    <div class="game-consigne">Consigne : Complète les phrases avec le mot néerlandais qui convient.</div>
+                    <div id="g2-container"></div>
+                    <button class="btn-action" style="margin-top: 1rem;" onclick="checkGame2()">Vérifier les réponses</button>
+                    <div class="feedback-message" id="g2-feedback"></div>
+                </div>
+
+                <!-- JEU 3 -->
+                <div class="game-card" id="game3">
+                    <div class="game-title">EXERCICE 3 – Gezond of ongezond?</div>
+                    <div class="game-consigne">Consigne : Indique si la situation est plutôt gezond ou ongezond.</div>
+                    <div id="g3-container"></div>
+                    <button class="btn-action" style="margin-top: 1rem;" onclick="checkGame3()">Vérifier les réponses</button>
+                    <div class="feedback-message" id="g3-feedback"></div>
+                </div>
+
+                <!-- JEU 4 -->
+                <div class="game-card" id="game4">
+                    <div class="game-title">EXERCICE 4 – De smaak</div>
+                    <div class="game-consigne">Consigne : Complète avec zoet, zuur, bitter ou zout.</div>
+                    <div id="g4-container"></div>
+                    <button class="btn-action" style="margin-top: 1rem;" onclick="checkGame4()">Vérifier les réponses</button>
+                    <div class="feedback-message" id="g4-feedback"></div>
+                </div>
+
+                <!-- JEU 5 -->
+                <div class="game-card" id="game5">
+                    <div class="game-title">EXERCICE 5 – Choisis le bon verbe</div>
+                    <div class="game-consigne">Consigne : Choisis le verbe correct.</div>
+                    <div id="g5-container"></div>
+                    <button class="btn-action" style="margin-top: 1rem;" onclick="checkGame5()">Vérifier les réponses</button>
+                    <div class="feedback-message" id="g5-feedback"></div>
+                </div>
+
+                <!-- JEU 6 -->
+                <div class="game-card" id="game6">
+                    <div class="game-title">EXERCICE 6 – Trouve l’intrus</div>
+                    <div class="game-consigne">Consigne : Dans chaque série, trouve le mot qui ne correspond pas aux autres.</div>
+                    <div id="g6-container"></div>
+                    <button class="btn-action" style="margin-top: 1rem;" onclick="checkGame6()">Vérifier les réponses</button>
+                    <div class="feedback-message" id="g6-feedback"></div>
+                </div>
+
+                <!-- JEU 7 -->
+                <div class="game-card" id="game7">
+                    <div class="game-title">EXERCICE 7 – Oorzaak en gevolg</div>
+                    <div class="game-consigne">Consigne : Associe chaque cause à une conséquence logique.</div>
+                    <div id="g7-container"></div>
+                    <button class="btn-action" style="margin-top: 1rem;" onclick="checkGame7()">Vérifier les réponses</button>
+                    <div class="feedback-message" id="g7-feedback"></div>
+                </div>
+
+                <!-- JEU 8 -->
+                <div class="game-card" id="game8">
+                    <div class="game-title">EXERCICE 8 – Complète avec le connecteur</div>
+                    <div class="game-consigne">Consigne : Complète avec : enerzijds – anderzijds – dus – bovendien – meestal – kortom – zo.</div>
+                    <div id="g8-container"></div>
+                    <button class="btn-action" style="margin-top: 1rem;" onclick="checkGame8()">Vérifier les réponses</button>
+                    <div class="feedback-message" id="g8-feedback"></div>
+                </div>
+
+                <!-- JEU 9 -->
+                <div class="game-card" id="game9">
+                    <div class="game-title">EXERCICE 9 – La bonne expression</div>
+                    <div class="game-consigne">Consigne : Complète avec l’expression qui convient (en conjuguant au besoin).</div>
+                    <div id="g9-container"></div>
+                    <button class="btn-action" style="margin-top: 1rem;" onclick="checkGame9()">Vérifier les réponses</button>
+                    <div class="feedback-message" id="g9-feedback"></div>
+                </div>
+
+                <!-- JEU 10 -->
+                <div class="game-card" id="game10">
+                    <div class="game-title">EXERCICE 10 – Texte à trous</div>
+                    <div class="game-consigne">Consigne : Complète le texte avec les mots proposés : gezondheid – voeding – beweging – gewoontes – gewicht – slaapgedrag – stress – regelmatig – voldoende – preventie.</div>
+                    <div id="g10-container" style="line-height: 2;"></div>
+                    <button class="btn-action" style="margin-top: 1rem;" onclick="checkGame10()">Vérifier les réponses</button>
+                    <div class="feedback-message" id="g10-feedback"></div>
+                </div>
+
+                <!-- JEU 11 -->
+                <div class="game-card" id="game11">
+                    <div class="game-title">EXERCICE 11 – Compréhension écrite</div>
+                    <div class="game-consigne">Lees de tekst en beantwoord de vragen (Vrai / Faux).</div>
+                    <div style="background: #F1F5F9; padding: 1.2rem; border-radius: 8px; margin-bottom: 1.5rem; border-left: 4px solid var(--blue-wbe);">
+                        <strong>Gezond leven</strong><br><br>
+                        Lisa is zestien jaar. Ze vindt haar gezondheid belangrijk. Ze probeert regelmatig te bewegen en eet meestal evenwichtig. Ze eet graag verse groenten en fruit, maar ze snoept ook af en toe. Ze drinkt bijna nooit alcohol en rookt niet.<br><br>
+                        Toch heeft Lisa soms last van stress. Vooral tijdens de examens is ze gespannen en heeft ze moeite om in slaap te vallen. Ze slaapt dan onvoldoende en voelt zich de volgende dag uitgeput.<br><br>
+                        Haar moeder geeft haar raadgeving: ze moet op tijd stoppen met studeren, voldoende slapen en regelmatig bewegen. Lisa probeert die raad te volgen. Ze weet dat goede leefgewoontes bijdragen tot een goede gezondheid.
+                    </div>
+                    <div id="g11-container"></div>
+                    <button class="btn-action" style="margin-top: 1rem;" onclick="checkGame11()">Vérifier les réponses</button>
+                    <div class="feedback-message" id="g11-feedback"></div>
+                </div>
+
+                <!-- JEU 12 -->
+                <div class="game-card" id="game12">
+                    <div class="game-title">EXERCICE 12 – Traduction ciblée</div>
+                    <div class="game-consigne">Consigne : Traduis en néerlandais.</div>
+                    <div id="g12-container"></div>
+                    <button class="btn-action" style="margin-top: 1rem;" onclick="checkGame12()">Vérifier les réponses</button>
+                    <div class="feedback-message" id="g12-feedback"></div>
+                </div>
+
+                <!-- JEU 13 -->
+                <div class="game-card" id="game13">
+                    <div class="game-title">EXERCICE 13 – Remets les mots dans l'ordre</div>
+                    <div class="game-consigne">Consigne : Remets les mots dans le bon ordre.</div>
+                    <div id="g13-container"></div>
+                    <button class="btn-action" style="margin-top: 1rem;" onclick="checkGame13()">Vérifier les réponses</button>
+                    <div class="feedback-message" id="g13-feedback"></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ONGLET 4 -->
+        <section id="tab4" class="tab-content">
+            <div class="section-header">
+                <h2 class="section-title">4. Mon Profil & Progression</h2>
+                <p class="section-subtitle">Visualise ton niveau et tes récompenses.</p>
+            </div>
+
+            <div class="intro-card" style="text-align: center;">
+                <h3>Ton Statut Actuel</h3>
+                <div style="font-size: 3rem; margin: 1rem 0;">&#127941;</div>
+                <div id="profile-score" style="font-size: 1.5rem; font-weight: 700; color: var(--blue-wbe);">0 Points</div>
+                <div id="profile-level" style="margin-top: 0.5rem; font-weight: 600; color: var(--red-wbe);">Niveau : Débutant</div>
+
+                <h4 style="margin-top: 2rem; text-align: left;">Badges débloqués :</h4>
+                <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; margin-top: 1rem;">
+                    <div id="badge-1" style="opacity: 0.3; padding: 1rem; border: 1px solid var(--border-color); border-radius: 8px; text-align: center;">
+                        <span style="font-size: 2rem;">&#127881;</span><br><strong>Premier Pas</strong><br><small>Fais un exercice</small>
+                    </div>
+                    <div id="badge-2" style="opacity: 0.3; padding: 1rem; border: 1px solid var(--border-color); border-radius: 8px; text-align: center;">
+                        <span style="font-size: 2rem;">&#11088;</span><br><strong>Expert Vocab</strong><br><small>Atteins 50 points</small>
+                    </div>
+                    <div id="badge-3" style="opacity: 0.3; padding: 1rem; border: 1px solid var(--border-color); border-radius: 8px; text-align: center;">
+                        <span style="font-size: 2rem;">&#129351;</span><br><strong>Maitre du Néerlandais</strong><br><small>Atteins 100 points</small>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div>© Pôle territorial WBE Bruxelles - Tous droits réservés.</div>
+        <div>Application d'apprentissage du néerlandais</div>
+    </footer>
+
+    <script>
+        // DONNÉES DE VOCABULAIRE
+        const vocabData = {
+            substantieven: [
+                { nl: "de alcohol", fr: "l'alcool", emoji: "🍷" },
+                { nl: "de beweging", fr: "le mouvement", emoji: "🏃" },
+                { nl: "de faalangst", fr: "la peur de l'échec", emoji: "😰" },
+                { nl: "de geneeskunde", fr: "la médecine", emoji: "🩺" },
+                { nl: "de gewoonte", fr: "l'habitude", emoji: "🔄" },
+                { nl: "de gezondheid", fr: "la santé", emoji: "🍎" },
+                { nl: "de hygiëne", fr: "l'hygiène", emoji: "🧼" },
+                { nl: "de indruk hebben dat", fr: "avoir l'impression que", emoji: "💭" },
+                { nl: "de kring", fr: "le cercle", emoji: "⭕" },
+                { nl: "de levensverwachting", fr: "l'espérance de vie", emoji: "📈" },
+                { nl: "de luchtvervuiling", fr: "la pollution atmosphérique", emoji: "🌫️" },
+                { nl: "de medische verzorging", fr: "les soins médicaux", emoji: "🏥" },
+                { nl: "de ontwikkelings", fr: "le développement", emoji: "🌱" },
+                { nl: "de oorzaak – de oorzaken", fr: "la cause – les causes", emoji: "🔍" },
+                { nl: "de opiniepeiling", fr: "le sondage", emoji: "📊" },
+                { nl: "de opdracht", fr: "la tâche", emoji: "📋" },
+                { nl: "de pijnstiller", fr: "l'antidouleur", emoji: "💊" },
+                { nl: "de preventie", fr: "la prévention", emoji: "🛡️" },
+                { nl: "de raadgeving", fr: "le conseil", emoji: "💡" },
+                { nl: "de spanning", fr: "la tension", emoji: "⚡" },
+                { nl: "de spijsvertering", fr: "la digestion", emoji: "🔄" },
+                { nl: "de tabak", fr: "le tabac", emoji: "🚬" },
+                { nl: "de verklaring", fr: "l'explication", emoji: "💬" },
+                { nl: "de voeding", fr: "l'alimentation", emoji: "🥗" },
+                { nl: "de wal – de wallen", fr: "le cerne – les cernes", emoji: "👁️" },
+                { nl: "de getuigenis", fr: "le témoignage", emoji: "🗣️" },
+                { nl: "het eetgedrag", fr: "le comportement alimentaire", emoji: "🍽️" },
+                { nl: "het gebruik", fr: "l'utilisation", emoji: "⚙️" },
+                { nl: "het gesprek", fr: "la conversation", emoji: "💬" },
+                { nl: "het [de] gevolg", fr: "la conséquence", emoji: "➡️" },
+                { nl: "het gerecht", fr: "le plat", emoji: "🍲" },
+                { nl: "het gewicht", fr: "le poids", emoji: "⚖️" },
+                { nl: "het slaapgedrag", fr: "le type de sommeil", emoji: "😴" },
+                { nl: "het vet", fr: "la graisse", emoji: "🥑" },
+                { nl: "het voedingsmiddel - de voedingsmiddelen", fr: "l'aliment - les produits alimentaires", emoji: "🥕" },
+                { nl: "het voorbeeld", fr: "l'exemple", emoji: "📌" }
+            ],
+            adjectieven: [
+                { nl: "bitter", fr: "amer", emoji: "☕" },
+                { nl: "dronken", fr: "saoul", emoji: "🥴" },
+                { nl: "fit", fr: "en forme", emoji: "⚡" },
+                { nl: "gemiddeld", fr: "en moyenne", emoji: "📊" },
+                { nl: "gespannen", fr: "tendu", emoji: "😬" },
+                { nl: "gezond", fr: "sain", emoji: "🥗" },
+                { nl: "licht", fr: "léger", emoji: "🪶" },
+                { nl: "noodzakelijk", fr: "nécessaire", emoji: "❗" },
+                { nl: "ongeduldig", fr: "impatient", emoji: "⏳" },
+                { nl: "regelmatig", fr: "régulièrement", emoji: "📅" },
+                { nl: "schadelijk", fr: "nuisible", emoji: "⚠️" },
+                { nl: "stevig", fr: "solide", emoji: "🏋️" },
+                { nl: "tegenwoordig", fr: "actuel(lement)", emoji: "🕒" },
+                { nl: "uitgeput", fr: "épuisé", emoji: "😫" },
+                { nl: "vers", fr: "frais", emoji: "🍎" },
+                { nl: "voldoende", fr: "suffisant, suffisamment", emoji: "👍" },
+                { nl: "zoet", fr: "sucré", emoji: "🍬" },
+                { nl: "zout", fr: "salé", emoji: "🧂" },
+                { nl: "zuur", fr: "acide", emoji: "🍋" }
+            ],
+            werkwoorden: [
+                { nl: "afslanken", fr: "mincir, perdre du poids", emoji: "📏" },
+                { nl: "beïnvloeden", fr: "influencer", emoji: "🎯" },
+                { nl: "benieuwd zijn", fr: "être curieux de savoir", emoji: "🤔" },
+                { nl: "beweren", fr: "prétendre", emoji: "🗣️" },
+                { nl: "bewegen", fr: "bouger", emoji: "🏃" },
+                { nl: "betekenen", fr: "signifier", emoji: "📌" },
+                { nl: "evenwichtig eten", fr: "manger équilibré", emoji: "🥗" },
+                { nl: "gewicht verliezen", fr: "perdre du poids", emoji: "⚖️" },
+                { nl: "hopen", fr: "espérer", emoji: "🤞" },
+                { nl: "in slaap vallen", fr: "s'endormir", emoji: "😴" },
+                { nl: "kilo's aankomen", fr: "prendre des kilos", emoji: "📈" },
+                { nl: "lusten", fr: "aimer (manger)", emoji: "😋" },
+                { nl: "missen", fr: "manquer, rater", emoji: "❌" },
+                { nl: "ontstressen", fr: "déstresser", emoji: "🧘" },
+                { nl: "overtuigen", fr: "convaincre", emoji: "💬" },
+                { nl: "pesten", fr: "embêter", emoji: "😤" },
+                { nl: "poetsen", fr: "brosser", emoji: "🪥" },
+                { nl: "raadplegen", fr: "consulter", emoji: "👨‍⚕️" },
+                { nl: "redden", fr: "sauver", emoji: "🛟" },
+                { nl: "roken", fr: "fumer", emoji: "🚬" },
+                { nl: "schaden", fr: "nuire", emoji: "⚠️" },
+                { nl: "smaken", fr: "goûter, avoir du goût", emoji: "👅" },
+                { nl: "snoepen", fr: "manger des bonbons, grignoter", emoji: "🍬" },
+                { nl: "twijfelen aan", fr: "hésiter", emoji: "❓" },
+                { nl: "uitputten", fr: "épuiser", emoji: "😫" },
+                { nl: "van mening zijn dat", fr: "être d'avis que", emoji: "💭" },
+                { nl: "verdikken", fr: "grossir", emoji: "📊" },
+                { nl: "verhogen", fr: "hausser, augmenter", emoji: "⬆️" },
+                { nl: "vermijden", fr: "éviter", emoji: "🚫" },
+                { nl: "veroorzaken", fr: "causer", emoji: "⚡" },
+                { nl: "vervangen", fr: "remplacer", emoji: "🔄" },
+                { nl: "verdwijnen", fr: "disparaître", emoji: "👻" },
+                { nl: "vetten beperken", fr: "limiter les graisses", emoji: "🥑" },
+                { nl: "vermageren", fr: "maigrir", emoji: "📉" },
+                { nl: "volgen", fr: "suivre", emoji: "🚶" },
+                { nl: "vrezen", fr: "craindre", emoji: "😨" },
+                { nl: "zeuren", fr: "se plaindre, se lamenter", emoji: "🗣️" },
+                { nl: "zich voelen", fr: "se sentir", emoji: "😊" },
+                { nl: "zorgen voor", fr: "veiller à", emoji: "🤝" }
+            ],
+            signaalwoorden: [
+                { nl: "anderzijds", fr: "d'autre part", emoji: "🔄" },
+                { nl: "bovendien", fr: "en outre, en plus", emoji: "➕" },
+                { nl: "dus", fr: "donc", emoji: "👉" },
+                { nl: "enerzijds", fr: "d'une part", emoji: "🔄" },
+                { nl: "kortom", fr: "bref, en un mot", emoji: "📝" },
+                { nl: "meestal", fr: "la plupart du temps", emoji: "🕒" },
+                { nl: "zo", fr: "ainsi", emoji: "💡" }
+            ],
+            voorzetsels: [
+                { nl: "Hij zorgt voor zijn gezondheid.", fr: "Il se soucie de sa santé.", emoji: "🍎" },
+                { nl: "Goede leefgewoontes dragen bij tot een goede gezondheid.", fr: "Un bon mode de vie contribue à une bonne santé.", emoji: "🌱" },
+                { nl: "Ik droom vaak over de school.", fr: "Je rêve souvent de l'école.", emoji: "🏫" },
+                { nl: "Ze is vaak op dieet.", fr: "Elle est souvent au régime.", emoji: "🥗" },
+                { nl: "Doe je mee aan sportactiviteiten?", fr: "Participes-tu à des activités sportives ?", emoji: "⚽" },
+                { nl: "Ik heb last van stress.", fr: "Je souffre de stress.", emoji: "🤯" },
+                { nl: "Hij is allergisch voor melk.", fr: "Il est allergique au lait.", emoji: "🥛" },
+                { nl: "Hou op met zeuren!", fr: "Cesse de te plaindre !", emoji: "🛑" }
+            ]
+        };
+
+        // ÉTAT GLOBAL
+        let totalScore = 0;
+        let isDyslexic = false;
+        let isHighContrast = false;
+        let currentFontSizeLevel = 0;
+
+        // COMBINER TOUT LE VOCABULAIRE POUR LES FLASHCARDS
+        const allVocabFlashcards = [
+            ...vocabData.substantieven,
+            ...vocabData.adjectieven,
+            ...vocabData.werkwoorden,
+            ...vocabData.signaalwoorden,
+            ...vocabData.voorzetsels
+        ];
+
+        let flashcardList = [...allVocabFlashcards];
+        let currentCardIndex = 0;
+        let isNlToFr = true;
+
+        // INITIALISATION AU CHARGEMENT
+        window.addEventListener('DOMContentLoaded', () => {
+            renderTables();
+            initFlashcards();
+            initGames();
+        });
+
+        // SYNTHÈSE VOCALE (SPEECH API - 0.6x)
+        function speakWord(text) {
+            if ('speechSynthesis' in window) {
+                window.speechSynthesis.cancel();
+                const cleanText = text.split('–')[0].split('-')[0].trim();
+                const utterance = new SpeechSynthesisUtterance(cleanText);
+                utterance.lang = 'nl-NL';
+                utterance.rate = 0.6;
+                window.speechSynthesis.speak(utterance);
+            } else {
+                alert("La synthèse vocale n'est pas supportée sur votre navigateur.");
+            }
+        }
+
+        // RENDU DES TABLEAUX DE VOCABULAIRE
+        function renderTables() {
+            Object.keys(vocabData).forEach(cat => {
+                const tbody = document.getElementById(`table-${cat}`);
+                if (!tbody) return;
+                
+                // Tri alphabétique en néerlandais
+                const sorted = [...vocabData[cat]].sort((a, b) => a.nl.localeCompare(b.nl, 'nl'));
+                
+                tbody.innerHTML = sorted.map(item => `
+                    <tr>
+                        <td><strong>${item.nl}</strong> ${item.emoji}</td>
+                        <td>
+                            <button class="audio-btn" onclick="speakWord('${item.nl.replace(/'/g, "\\'")}')">
+                                &#128266; Ecouter
+                            </button>
+                        </td>
+                        <td>${item.fr}</td>
+                    </tr>
+                `).join('');
+            });
+        }
+
+        // GESTION DES FLASHCARDS
+        function initFlashcards() {
+            updateFlashcard();
+        }
+
+        function updateFlashcard() {
+            const card = flashcardList[currentCardIndex];
+            const frontEl = document.getElementById('fc-front-text');
+            const backEl = document.getElementById('fc-back-text');
+            const audioTarget = document.getElementById('fc-audio-target');
+            const counterEl = document.getElementById('fc-counter');
+
+            document.getElementById('flashcard-el').classList.remove('flipped');
+
+            if (isNlToFr) {
+                frontEl.innerText = `${card.emoji} ${card.nl}`;
+                backEl.innerText = card.fr;
+                audioTarget.innerText = card.nl;
+            } else {
+                frontEl.innerText = card.fr;
+                backEl.innerText = `${card.emoji} ${card.nl}`;
+                audioTarget.innerText = card.nl;
+            }
+
+            counterEl.innerText = `${currentCardIndex + 1} / ${flashcardList.length}`;
+        }
+
+        function flipCard() {
+            document.getElementById('flashcard-el').classList.toggle('flipped');
+        }
+
+        function nextCard() {
+            currentCardIndex = (currentCardIndex + 1) % flashcardList.length;
+            updateFlashcard();
+        }
+
+        function prevCard() {
+            currentCardIndex = (currentCardIndex - 1 + flashcardList.length) % flashcardList.length;
+            updateFlashcard();
+        }
+
+        function toggleLanguageDirection() {
+            isNlToFr = !isNlToFr;
+            document.getElementById('lang-dir-label').innerHTML = isNlToFr ? "Néerlandais &#127757; Français" : "Français &#127757; Néerlandais";
+            updateFlashcard();
+        }
+
+        function shuffleFlashcards() {
+            flashcardList.sort(() => Math.random() - 0.5);
+            currentCardIndex = 0;
+            updateFlashcard();
+        }
+
+        // ACCESSIBILITÉ
+        function toggleDyslexicFont() {
+            isDyslexic = !isDyslexic;
+            document.body.classList.toggle('dyslexic-font', isDyslexic);
+        }
+
+        function toggleHighContrast() {
+            isHighContrast = !isHighContrast;
+            document.body.classList.toggle('high-contrast', isHighContrast);
+        }
+
+        function changeFontSize(delta) {
+            currentFontSizeLevel = Math.max(-2, Math.min(3, currentFontSizeLevel + delta));
+            const newSize = 1 + (currentFontSizeLevel * 0.1);
+            document.documentElement.style.fontSize = `${newSize}rem`;
+        }
+
+        // NAVIGATION ONGLETS
+        function switchTab(tabId, btn) {
+            document.querySelectorAll('.tab-content').forEach(tc => tc.classList.remove('active'));
+            document.querySelectorAll('.nav-btn').forEach(nb => nb.classList.remove('active'));
+            document.getElementById(tabId).classList.add('active');
+            btn.classList.add('active');
+        }
+
+        // GAMIFICATION & POINTS
+        function addPoints(pts) {
+            totalScore += pts;
+            document.getElementById('score-display').innerText = `Score : ${totalScore} pts`;
+            document.getElementById('profile-score').innerText = `${totalScore} Points`;
+            
+            // Mise à jour badges et niveaux
+            const levelEl = document.getElementById('profile-level');
+            if (totalScore >= 100) {
+                levelEl.innerText = "Niveau : Expert de la Santé";
+                document.getElementById('badge-3').style.opacity = '1';
+            } else if (totalScore >= 50) {
+                levelEl.innerText = "Niveau : Intermédiaire";
+                document.getElementById('badge-2').style.opacity = '1';
+            } else if (totalScore > 0) {
+                document.getElementById('badge-1').style.opacity = '1';
+            }
+        }
+
+        // FONCTION UTILITAIRE : MELANGER UN TABLEAU
+        function shuffleArray(arr) {
+            return [...arr].sort(() => Math.random() - 0.5);
+        }
+
+        // GESTION DES 13 JEUX / EXERCICES
+        function initGames() {
+            initG1();
+            initG2();
+            initG3();
+            initG4();
+            initG5();
+            initG6();
+            initG7();
+            initG8();
+            initG9();
+            initG10();
+            initG11();
+            initG12();
+            initG13();
+        }
+
+        // EXERCICE 1
+        const g1Data = [
+            { nl: "de gezondheid", fr: "la santé", id: "d" },
+            { nl: "het gewicht", fr: "le poids", id: "i" },
+            { nl: "de voeding", fr: "l'alimentation", id: "c" },
+            { nl: "de hygiëne", fr: "l'hygiène", id: "e" },
+            { nl: "de preventie", fr: "la prévention", id: "b" },
+            { nl: "de spijsvertering", fr: "la digestion", id: "f" },
+            { nl: "de luchtvervuiling", fr: "la pollution atmosphérique", id: "j" },
+            { nl: "de medische verzorging", fr: "les soins médicaux", id: "g" },
+            { nl: "de levensverwachting", fr: "l'espérance de vie", id: "h" },
+            { nl: "de gewoonte", fr: "l'habitude", id: "a" }
+        ];
+
+        function initG1() {
+            const container = document.getElementById('g1-container');
+            const shuffledNl = shuffleArray(g1Data);
+            const optionsFr = [
+                { id: "a", txt: "l'habitude" },
+                { id: "b", txt: "la prévention" },
+                { id: "c", txt: "l'alimentation" },
+                { id: "d", txt: "la santé" },
+                { id: "e", txt: "l'hygiène" },
+                { id: "f", txt: "la digestion" },
+                { id: "g", txt: "les soins médicaux" },
+                { id: "h", txt: "l'espérance de vie" },
+                { id: "i", txt: "le poids" },
+                { id: "j", txt: "la pollution atmosphérique" }
+            ];
+
+            container.innerHTML = shuffledNl.map((item, idx) => `
+                <div class="exercise-item">
+                    <span>${idx + 1}. <strong>${item.nl}</strong></span>
+                    <select class="input-inline" id="g1-ans-${idx}" data-correct="${item.id}">
+                        <option value="">-- Choisir --</option>
+                        ${optionsFr.map(o => `<option value="${o.id}">${o.txt}</option>`).join('')}
+                    </select>
+                </div>
+            `).join('');
+        }
+
+        function checkGame1() {
+            let count = 0;
+            g1Data.forEach((_, idx) => {
+                const el = document.getElementById(`g1-ans-${idx}`);
+                if (el.value === el.dataset.correct) count++;
+            });
+            showFeedback('g1-feedback', count, g1Data.length);
+        }
+
+        // EXERCICE 2
+        const g2Data = [
+            { q: "a. Een goede __________ is belangrijk als je gezond wilt blijven.", ans: "gezondheid" },
+            { q: "b. Te veel __________ eten is niet goed voor je lichaam.", ans: "vet" },
+            { q: "c. Roken betekent dat je __________ gebruikt.", ans: "tabak" },
+            { q: "d. Sport en __________ zijn belangrijk voor je gezondheid.", ans: "beweging" },
+            { q: "e. Je __________ regularly wassen is een goede __________.", ans: ["hygiëne", "gewoonte"] },
+            { q: "f. Te veel __________ drinken kan schadelijk zijn.", ans: "alcohol" },
+            { q: "g. Een evenwichtige __________ bevat verschillende voedingsmiddelen.", ans: "voeding" },
+            { q: "h. __________ is belangrijk om ziekten te vermijden.", ans: "preventie" },
+            { q: "i. Mijn __________ is de laatste maanden met drie kilo gestegen.", ans: "gewicht" },
+            { q: "j. Een gezonde __________ kan je hele leven beïnvloeden.", ans: "gewoonte" }
+        ];
+
+        function initG2() {
+            const container = document.getElementById('g2-container');
+            const shuffled = shuffleArray(g2Data);
+            const words = ["gezondheid", "gewicht", "alcohol", "tabak", "beweging", "voeding", "hygiëne", "preventie", "vet", "gewoonte"];
+
+            container.innerHTML = shuffled.map((item, idx) => {
+                let text = item.q;
+                if (Array.isArray(item.ans)) {
+                    text = text.replace('__________', `<select class="input-inline" id="g2-ans-${idx}-0" data-correct="${item.ans[0]}"><option value="">-- select --</option>${words.map(w => `<option value="${w}">${w}</option>`).join('')}</select>`);
+                    text = text.replace('__________', `<select class="input-inline" id="g2-ans-${idx}-1" data-correct="${item.ans[1]}"><option value="">-- select --</option>${words.map(w => `<option value="${w}">${w}</option>`).join('')}</select>`);
+                } else {
+                    text = text.replace('__________', `<select class="input-inline" id="g2-ans-${idx}-0" data-correct="${item.ans}"><option value="">-- select --</option>${words.map(w => `<option value="${w}">${w}</option>`).join('')}</select>`);
+                }
+                return `<div class="exercise-item">${text}</div>`;
+            }).join('');
+            container.dataset.length = shuffled.length;
+        }
+
+        function checkGame2() {
+            const len = parseInt(document.getElementById('g2-container').dataset.length);
+            let correct = 0;
+            let totalInputs = 0;
+
+            for (let i = 0; i < len; i++) {
+                const el0 = document.getElementById(`g2-ans-${i}-0`);
+                if (el0) {
+                    totalInputs++;
+                    if (el0.value.toLowerCase() === el0.dataset.correct.toLowerCase()) correct++;
+                }
+                const el1 = document.getElementById(`g2-ans-${i}-1`);
+                if (el1) {
+                    totalInputs++;
+                    if (el1.value.toLowerCase() === el1.dataset.correct.toLowerCase()) correct++;
+                }
+            }
+            showFeedback('g2-feedback', correct, totalInputs);
+        }
+
+        // EXERCICE 3
+        const g3Data = [
+            { q: "Je eet regelmatig verse groenten en fruit.", ans: "gezond" },
+            { q: "Je rookt elke dag.", ans: "ongezond" },
+            { q: "Je slaapt voldoende.", ans: "gezond" },
+            { q: "Je drinkt veel alcohol.", ans: "ongezond" },
+            { q: "Je beweegt regelmatig.", ans: "gezond" },
+            { q: "Je eet voortdurend zoete snacks.", ans: "ongezond" },
+            { q: "Je zorgt goed voor je hygiëne.", ans: "gezond" },
+            { q: "Je zit de hele dag zonder te bewegen.", ans: "ongezond" },
+            { q: "Je volgt een evenwichtig voedingspatroon.", ans: "gezond" },
+            { q: "Je vermijdt te veel vet.", ans: "gezond" }
+        ];
+
+        function initG3() {
+            const container = document.getElementById('g3-container');
+            const shuffled = shuffleArray(g3Data);
+            container.innerHTML = shuffled.map((item, idx) => `
+                <div class="exercise-item">
+                    <span>${item.q}</span>
+                    <select class="input-inline" id="g3-ans-${idx}" data-correct="${item.ans}">
+                        <option value="">-- Choisir --</option>
+                        <option value="gezond">gezond</option>
+                        <option value="ongezond">ongezond</option>
+                    </select>
+                </div>
+            `).join('');
+            container.dataset.length = shuffled.length;
+        }
+
+        function checkGame3() {
+            const len = parseInt(document.getElementById('g3-container').dataset.length);
+            let count = 0;
+            for (let i = 0; i < len; i++) {
+                const el = document.getElementById(`g3-ans-${i}`);
+                if (el.value === el.dataset.correct) count++;
+            }
+            showFeedback('g3-feedback', count, len);
+        }
+
+        // EXERCICE 4
+        const g4Data = [
+            { q: "a. Citroen smaakt __________.", ans: "zuur" },
+            { q: "b. Chocolade smaakt meestal __________.", ans: "zoet" },
+            { q: "c. Chips zijn vaak __________.", ans: "zout" },
+            { q: "d. Koffie zonder suiker kan __________ smaken.", ans: "bitter" },
+            { q: "e. Een sinaasappel kan zoet of __________ zijn.", ans: "zuur" }
+        ];
+
+        function initG4() {
+            const container = document.getElementById('g4-container');
+            const shuffled = shuffleArray(g4Data);
+            const opts = ["zoet", "zuur", "bitter", "zout"];
+            container.innerHTML = shuffled.map((item, idx) => {
+                const html = item.q.replace('__________', `
+                    <select class="input-inline" id="g4-ans-${idx}" data-correct="${item.ans}">
+                        <option value="">-- select --</option>
+                        ${opts.map(o => `<option value="${o}">${o}</option>`).join('')}
+                    </select>
+                `);
+                return `<div class="exercise-item">${html}</div>`;
+            }).join('');
+            container.dataset.length = shuffled.length;
+        }
+
+        function checkGame4() {
+            const len = parseInt(document.getElementById('g4-container').dataset.length);
+            let count = 0;
+            for (let i = 0; i < len; i++) {
+                const el = document.getElementById(`g4-ans-${i}`);
+                if (el.value === el.dataset.correct) count++;
+            }
+            showFeedback('g4-feedback', count, len);
+        }
+
+        // EXERCICE 5
+        const g5Data = [
+            { q: "a. Als je gezond wilt blijven, moet je regelmatig (bewegen / snoepen).", opts: ["bewegen", "snoepen"], ans: "bewegen" },
+            { q: "b. Veel jongeren willen soms (afslanken / roken) omdat ze zich niet goed voelen in hun lichaam.", opts: ["afslanken", "roken"], ans: "afslanken" },
+            { q: "c. Je moet te veel vet (vermijden / smaken).", opts: ["vermijden", "smaken"], ans: "vermijden" },
+            { q: "d. Mijn zus wil vijf kilo (aankomen / verliezen).", opts: ["aankomen", "verliezen"], ans: "verliezen" },
+            { q: "e. Na een lange dag wil ik graag (ontstressen / pesten).", opts: ["ontstressen", "pesten"], ans: "ontstressen" },
+            { q: "f. Mijn vader moet de dokter (raadplegen / redden).", opts: ["raadplegen", "redden"], ans: "raadplegen" },
+            { q: "g. Ik kan niet goed (in slaap vallen / overtuigen).", opts: ["in slaap vallen", "overtuigen"], ans: "in slaap vallen" },
+            { q: "h. Je moet je tanden regelmatig (poetsen / verhogen).", opts: ["poetsen", "verhogen"], ans: "poetsen" },
+            { q: "i. Sommige voedingsmiddelen kunnen de gezondheid (schaden / volgen).", opts: ["schaden", "volgen"], ans: "schaden" },
+            { q: "j. Ik (lust / veroorzaak) geen melk.", opts: ["lust", "veroorzaak"], ans: "lust" }
+        ];
+
+        function initG5() {
+            const container = document.getElementById('g5-container');
+            const shuffled = shuffleArray(g5Data);
+            container.innerHTML = shuffled.map((item, idx) => `
+                <div class="exercise-item">
+                    <span>${item.q}</span><br>
+                    <select class="input-inline" style="margin-top:0.4rem;" id="g5-ans-${idx}" data-correct="${item.ans}">
+                        <option value="">-- Choisir le verbe --</option>
+                        ${item.opts.map(o => `<option value="${o}">${o}</option>`).join('')}
+                    </select>
+                </div>
+            `).join('');
+            container.dataset.length = shuffled.length;
+        }
+
+        function checkGame5() {
+            const len = parseInt(document.getElementById('g5-container').dataset.length);
+            let count = 0;
+            for (let i = 0; i < len; i++) {
+                const el = document.getElementById(`g5-ans-${i}`);
+                if (el.value === el.dataset.correct) count++;
+            }
+            showFeedback('g5-feedback', count, len);
+        }
+
+        // EXERCICE 6
+        const g6Data = [
+            { words: ["gezond", "fit", "schadelijk", "regelmatig"], ans: "schadelijk" },
+            { words: ["roken", "snoepen", "bewegen", "vermageren"], ans: "bewegen" },
+            { words: ["zoet", "zuur", "bitter", "gespannen"], ans: "gespannen" },
+            { words: ["de voeding", "het gerecht", "het voedingsmiddel", "de spanning"], ans: "de spanning" },
+            { words: ["de oorzaak", "het gevolg", "de verklaring", "de gezondheid"], ans: "de gezondheid" },
+            { words: ["de tabak", "de alcohol", "het vet", "de hygiëne"], ans: "de hygiëne" },
+            { words: ["uitgeput", "gespannen", "ongeduldig", "vers"], ans: "vers" }
+        ];
+
+        function initG6() {
+            const container = document.getElementById('g6-container');
+            const shuffled = shuffleArray(g6Data);
+            container.innerHTML = shuffled.map((item, idx) => `
+                <div class="exercise-item">
+                    <span>Série ${idx + 1} : ${item.words.join(' – ')}</span><br>
+                    <select class="input-inline" style="margin-top:0.4rem;" id="g6-ans-${idx}" data-correct="${item.ans}">
+                        <option value="">-- Trouve l'intrus --</option>
+                        ${item.words.map(w => `<option value="${w}">${w}</option>`).join('')}
+                    </select>
+                </div>
+            `).join('');
+            container.dataset.length = shuffled.length;
+        }
+
+        function checkGame6() {
+            const len = parseInt(document.getElementById('g6-container').dataset.length);
+            let count = 0;
+            for (let i = 0; i < len; i++) {
+                const el = document.getElementById(`g6-ans-${i}`);
+                if (el.value === el.dataset.correct) count++;
+            }
+            showFeedback('g6-feedback', count, len);
+        }
+
+        // EXERCICE 7
+        const g7Data = [
+            { cause: "Hij rookt elke dag.", ans: "c" },
+            { cause: "Ze slaapt maar vier uur per nacht.", ans: "b" },
+            { cause: "Hij beweegt regelmatig.", ans: "a" },
+            { cause: "Ze eet evenwichtig.", ans: "f" },
+            { cause: "Hij drinkt te veel alcohol.", ans: "e" },
+            { cause: "Ze heeft faalangst.", ans: "d" }
+        ];
+
+        function initG7() {
+            const container = document.getElementById('g7-container');
+            const shuffled = shuffleArray(g7Data);
+            const gevolgen = [
+                { id: "a", txt: "Ze heeft meer energie." },
+                { id: "b", txt: "Ze is vaak uitgeput." },
+                { id: "c", txt: "Zijn gezondheid kan schade ondervinden." },
+                { id: "d", txt: "Ze voelt zich gespannen voor een examen." },
+                { id: "e", txt: "Hij kan problemen met zijn gezondheid krijgen." },
+                { id: "f", txt: "Ze zorgt goed voor haar lichaam." }
+            ];
+
+            container.innerHTML = shuffled.map((item, idx) => `
+                <div class="exercise-item">
+                    <span><strong>Oorzaak :</strong> ${item.cause}</span><br>
+                    <select class="input-inline" style="margin-top:0.4rem;" id="g7-ans-${idx}" data-correct="${item.ans}">
+                        <option value="">-- Choisir la conséquence --</option>
+                        ${gevolgen.map(g => `<option value="${g.id}">${g.txt}</option>`).join('')}
+                    </select>
+                </div>
+            `).join('');
+            container.dataset.length = shuffled.length;
+        }
+
+        function checkGame7() {
+            const len = parseInt(document.getElementById('g7-container').dataset.length);
+            let count = 0;
+            for (let i = 0; i < len; i++) {
+                const el = document.getElementById(`g7-ans-${i}`);
+                if (el.value === el.dataset.correct) count++;
+            }
+            showFeedback('g7-feedback', count, len);
+        }
+
+        // EXERCICE 8
+        const g8Data = [
+            { q: "a. __________ is sport goed voor je gezondheid. __________ kan te veel sport ook problemen veroorzaken.", ans: ["Enerzijds", "Anderzijds"] },
+            { q: "b. Ik slaap voldoende. __________ ben ik overdag meestal fit.", ans: "Dus" },
+            { q: "c. Hij eet gezond en beweegt regelmatig. __________ rookt hij niet.", ans: "Bovendien" },
+            { q: "d. Ik eet __________ thuis, maar soms ga ik naar een restaurant.", ans: "meestal" },
+            { q: "e. __________ is een gezonde levensstijl belangrijk voor iedereen.", ans: "Kortom" },
+            { q: "f. Je kunt gezond eten en __________ voor je gezondheid zorgen.", ans: "zo" }
+        ];
+
+        function initG8() {
+            const container = document.getElementById('g8-container');
+            const shuffled = shuffleArray(g8Data);
+            const opts = ["Enerzijds", "Anderzijds", "Dus", "Bovendien", "meestal", "Kortom", "zo"];
+
+            container.innerHTML = shuffled.map((item, idx) => {
+                let txt = item.q;
+                if (Array.isArray(item.ans)) {
+                    txt = txt.replace('__________', `<select class="input-inline" id="g8-ans-${idx}-0" data-correct="${item.ans[0]}"><option value="">-- select --</option>${opts.map(o => `<option value="${o}">${o}</option>`).join('')}</select>`);
+                    txt = txt.replace('__________', `<select class="input-inline" id="g8-ans-${idx}-1" data-correct="${item.ans[1]}"><option value="">-- select --</option>${opts.map(o => `<option value="${o}">${o}</option>`).join('')}</select>`);
+                } else {
+                    txt = txt.replace('__________', `<select class="input-inline" id="g8-ans-${idx}-0" data-correct="${item.ans}"><option value="">-- select --</option>${opts.map(o => `<option value="${o}">${o}</option>`).join('')}</select>`);
+                }
+                return `<div class="exercise-item">${txt}</div>`;
+            }).join('');
+            container.dataset.length = shuffled.length;
+        }
+
+        function checkGame8() {
+            const len = parseInt(document.getElementById('g8-container').dataset.length);
+            let correct = 0;
+            let totalInputs = 0;
+
+            for (let i = 0; i < len; i++) {
+                const el0 = document.getElementById(`g8-ans-${i}-0`);
+                if (el0) {
+                    totalInputs++;
+                    if (el0.value.toLowerCase() === el0.dataset.correct.toLowerCase()) correct++;
+                }
+                const el1 = document.getElementById(`g8-ans-${i}-1`);
+                if (el1) {
+                    totalInputs++;
+                    if (el1.value.toLowerCase() === el1.dataset.correct.toLowerCase()) correct++;
+                }
+            }
+            showFeedback('g8-feedback', correct, totalInputs);
+        }
+
+        // EXERCICE 9
+        const g9Data = [
+            { q: "a. Ik __________ goede voeding belangrijk is.", ans: "ben van mening dat" },
+            { q: "b. Zij __________ stress tijdens de examens.", ans: "heeft last van" },
+            { q: "c. Wij moeten goed __________ onze gezondheid.", ans: "zorgen voor" },
+            { q: "d. Ik __________ hij de waarheid vertelt.", ans: "twijfel aan" },
+            { q: "e. Ik ben __________ hoe lang hij zonder slaap kan.", ans: "benieuwd" },
+            { q: "f. Ik __________ hij te veel snoept.", ans: "heb de indruk dat" }
+        ];
+
+        function initG9() {
+            const container = document.getElementById('g9-container');
+            const shuffled = shuffleArray(g9Data);
+            const opts = [
+                "ben van mening dat",
+                "heeft last van",
+                "zorgen voor",
+                "twijfel aan",
+                "benieuwd",
+                "heb de indruk dat"
+            ];
+
+            container.innerHTML = shuffled.map((item, idx) => {
+                const txt = item.q.replace('__________', `
+                    <select class="input-inline" id="g9-ans-${idx}" data-correct="${item.ans}">
+                        <option value="">-- Choisir l'expression --</option>
+                        ${opts.map(o => `<option value="${o}">${o}</option>`).join('')}
+                    </select>
+                `);
+                return `<div class="exercise-item">${txt}</div>`;
+            }).join('');
+            container.dataset.length = shuffled.length;
+        }
+
+        function checkGame9() {
+            const len = parseInt(document.getElementById('g9-container').dataset.length);
+            let count = 0;
+            for (let i = 0; i < len; i++) {
+                const el = document.getElementById(`g9-ans-${i}`);
+                if (el.value === el.dataset.correct) count++;
+            }
+            showFeedback('g9-feedback', count, len);
+        }
+
+        // EXERCICE 10
+        const g10Text = [
+            { text: "Tegenwoordig vinden veel jongeren hun ", hole: true, ans: "gezondheid" },
+            { text: " belangrijk. Een gezonde ", hole: true, ans: "voeding" },
+            { text: " is daarbij noodzakelijk. Je moet niet alleen gezond eten, maar ook ", hole: true, ans: "regelmatig" },
+            { text: " bewegen. Goede leef", hole: true, ans: "gewoontes" },
+            { text: " kunnen helpen om een gezond ", hole: true, ans: "gewicht" },
+            { text: " te behouden. Ook je ", hole: true, ans: "slaapgedrag" },
+            { text: " speelt een belangrijke rol. Wie ", hole: true, ans: "voldoende" },
+            { text: " slaapt en beweegt, voelt zich vaak fitter. Ten slotte is ", hole: true, ans: "preventie" },
+            { text: " belangrijk om gezondheidsproblemen te vermijden. Te veel ", hole: true, ans: "stress" },
+            { text: " kan immers schadelijk zijn.", hole: false }
+        ];
+
+        function initG10() {
+            const container = document.getElementById('g10-container');
+            const words = ["gezondheid", "voeding", "beweging", "gewoontes", "gewicht", "slaapgedrag", "stress", "regelmatig", "voldoende", "preventie"];
+
+            let html = "";
+            let holeIdx = 0;
+            g10Text.forEach(part => {
+                html += part.text;
+                if (part.hole) {
+                    html += `
+                        <select class="input-inline" id="g10-ans-${holeIdx}" data-correct="${part.ans}">
+                            <option value="">-- ? --</option>
+                            ${words.map(w => `<option value="${w}">${w}</option>`).join('')}
+                        </select>
+                    `;
+                    holeIdx++;
+                }
+            });
+            container.innerHTML = html;
+            container.dataset.length = holeIdx;
+        }
+
+        function checkGame10() {
+            const len = parseInt(document.getElementById('g10-container').dataset.length);
+            let count = 0;
+            for (let i = 0; i < len; i++) {
+                const el = document.getElementById(`g10-ans-${i}`);
+                if (el.value === el.dataset.correct) count++;
+            }
+            showFeedback('g10-feedback', count, len);
+        }
+
+        // EXERCICE 11
+        const g11Data = [
+            { q: "a. Lisa is 15 jaar.", ans: "Faux" },
+            { q: "b. Ze eet meestal evenwichtig.", ans: "Vrai" },
+            { q: "c. Ze snoept nooit.", ans: "Faux" },
+            { q: "d. Ze drinkt vaak alcohol.", ans: "Faux" },
+            { q: "e. Ze heeft soms last van stress.", ans: "Vrai" },
+            { q: "f. Tijdens examens slaapt ze goed.", ans: "Faux" },
+            { q: "g. Haar moeder geeft haar raadgeving.", ans: "Vrai" },
+            { q: "h. Lisa probeert de raad van haar moeder te volgen.", ans: "Vrai" }
+        ];
+
+        function initG11() {
+            const container = document.getElementById('g11-container');
+            const shuffled = shuffleArray(g11Data);
+            container.innerHTML = shuffled.map((item, idx) => `
+                <div class="exercise-item">
+                    <span>${item.q}</span>
+                    <select class="input-inline" id="g11-ans-${idx}" data-correct="${item.ans}">
+                        <option value="">-- Choisir --</option>
+                        <option value="Vrai">Vrai</option>
+                        <option value="Faux">Faux</option>
+                    </select>
+                </div>
+            `).join('');
+            container.dataset.length = shuffled.length;
+        }
+
+        function checkGame11() {
+            const len = parseInt(document.getElementById('g11-container').dataset.length);
+            let count = 0;
+            for (let i = 0; i < len; i++) {
+                const el = document.getElementById(`g11-ans-${i}`);
+                if (el.value === el.dataset.correct) count++;
+            }
+            showFeedback('g11-feedback', count, len);
+        }
+
+        // EXERCICE 12
+        const g12Data = [
+            { fr: "a. Il se soucie de sa santé.", ans: "Hij zorgt voor zijn gezondheid" },
+            { fr: "b. Elle est souvent au régime.", ans: "Ze is vaak op dieet" },
+            { fr: "c. Je souffre de stress.", ans: "Ik heb last van stress" },
+            { fr: "d. Il est allergique au lait.", ans: "Hij is allergisch voor melk" },
+            { fr: "e. Participes-tu à des activités sportives ?", ans: "Doe je mee aan sportactiviteiten?" },
+            { fr: "f. Cesse de te plaindre !", ans: "Hou op met zeuren!" },
+            { fr: "g. Les bonnes habitudes de vie contribuent à une bonne santé.", ans: "Goede leefgewoontes dragen bij tot een goede gezondheid" },
+            { fr: "h. Je rêve souvent de l'école.", ans: "Ik droom vaak over de school" }
+        ];
+
+        function initG12() {
+            const container = document.getElementById('g12-container');
+            const shuffled = shuffleArray(g12Data);
+            container.innerHTML = shuffled.map((item, idx) => `
+                <div class="exercise-item">
+                    <span>${item.fr}</span><br>
+                    <input type="text" class="input-inline" style="width: 90%; margin-top: 0.4rem;" id="g12-ans-${idx}" data-correct="${item.ans}" placeholder="Écris en néerlandais...">
+                </div>
+            `).join('');
+            container.dataset.length = shuffled.length;
+        }
+
+        function checkGame12() {
+            const len = parseInt(document.getElementById('g12-container').dataset.length);
+            let count = 0;
+            for (let i = 0; i < len; i++) {
+                const el = document.getElementById(`g12-ans-${i}`);
+                const userVal = el.value.trim().toLowerCase().replace(/[.,!?]/g, "");
+                const correctVal = el.dataset.correct.trim().toLowerCase().replace(/[.,!?]/g, "");
+                if (userVal === correctVal) count++;
+            }
+            showFeedback('g12-feedback', count, len);
+        }
+
+        // EXERCICE 13
+        const g13Data = [
+            { fr: "a. gezondheid / zijn / hij / voor / zorgt / zijn", ans: "Hij zorgt voor zijn gezondheid" },
+            { fr: "b. regelmatig / moeten / bewegen / we", ans: "We moeten regelmatig bewegen" },
+            { fr: "c. last / stress / heb / ik / van", ans: "Ik heb last van stress" },
+            { fr: "d. vaak / ze / dieet / op / is", ans: "Ze is vaak op dieet" },
+            { fr: "e. melk / allergisch / hij / voor / is", ans: "Hij is allergisch voor melk" },
+            { fr: "f. bijdragen / goede / gezondheid / tot / leefgewoontes / een / goede", ans: "Goede leefgewoontes dragen bij tot een goede gezondheid" }
+        ];
+
+        function initG13() {
+            const container = document.getElementById('g13-container');
+            const shuffled = shuffleArray(g13Data);
+            container.innerHTML = shuffled.map((item, idx) => `
+                <div class="exercise-item">
+                    <span><strong>Mots désordonnés :</strong> ${item.fr}</span><br>
+                    <input type="text" class="input-inline" style="width: 90%; margin-top: 0.4rem;" id="g13-ans-${idx}" data-correct="${item.ans}" placeholder="Remets la phrase dans l'ordre...">
+                </div>
+            `).join('');
+            container.dataset.length = shuffled.length;
+        }
+
+        function checkGame13() {
+            const len = parseInt(document.getElementById('g13-container').dataset.length);
+            let count = 0;
+            for (let i = 0; i < len; i++) {
+                const el = document.getElementById(`g13-ans-${i}`);
+                const userVal = el.value.trim().toLowerCase().replace(/[.,!?]/g, "");
+                const correctVal = el.dataset.correct.trim().toLowerCase().replace(/[.,!?]/g, "");
+                if (userVal === correctVal) count++;
+            }
+            showFeedback('g13-feedback', count, len);
+        }
+
+        // AFFICHAGE DU FEEDBACK ET COMPTAGE DES POINTS
+        function showFeedback(elementId, correctCount, totalCount) {
+            const el = document.getElementById(elementId);
+            el.style.display = 'block';
+
+            const pointsEarned = correctCount * 2;
+            addPoints(pointsEarned);
+
+            if (correctCount === totalCount) {
+                el.className = 'feedback-message feedback-success';
+                el.innerHTML = `&#127881; Uitstekend! Parfait ! Tu as obtenu ${correctCount}/${totalCount} (${pointsEarned} points gagnés) !`;
+            } else if (correctCount > totalCount / 2) {
+                el.className = 'feedback-message feedback-success';
+                el.innerHTML = `&#12471; Goed gedaan! Très bien ! Tu as obtenu ${correctCount}/${totalCount} (+${pointsEarned} points). Continue ainsi !`;
+            } else {
+                el.className = 'feedback-message feedback-error';
+                el.innerHTML = `&#9888; Blijf oefenen! Tu as obtenu ${correctCount}/${totalCount}. Relis le vocabulaire de l'onglet 2 et réessaie !`;
+            }
+        }
+    </script>
+</body>
+</html>
